@@ -10,9 +10,10 @@ const adminRoutes=require("../routes/admin.routes")
 const aiRoutes=require("../routes/ai.routes")
 const conversationRoutes=require("../routes/conversation.routes")
 const messageRoutes=require("../routes/message.routes")
+const config = require("../config/config")
 app.use(express.json())
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:config.FRONTEND_URL,
     credentials:true
 }))
 app.use(cookieParser())
