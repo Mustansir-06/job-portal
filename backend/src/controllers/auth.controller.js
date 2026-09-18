@@ -33,7 +33,9 @@ const userRegisterController=async(req,res)=>{
     user.refreshToken=refreshtoken
     await user.save()
     res.cookie("refreshtoken",refreshtoken,{
-        httpOnly:true
+        httpOnly:true,
+        secure: true,
+        sameSite: "none"
     })
     return res.status(201).json({
         message:"user registered successfully",
@@ -71,7 +73,9 @@ const userLoginController=async(req,res)=>{
     user.refreshToken=refreshtoken
     await user.save()
     res.cookie("refreshtoken",refreshtoken,{
-        httpOnly:true
+        httpOnly:true,
+        secure: true,
+        sameSite: "none"
     })
     return res.status(200).json({
         message:"user loggedin successfully",
@@ -112,7 +116,9 @@ const refreshController=async(req,res)=>{
     user.refreshToken=newrefreshtoken
     await user.save()
     res.cookie("refreshtoken",newrefreshtoken,{
-        httpOnly:true
+        httpOnly:true,
+        secure: true,
+        sameSite: "none"
     })
     return res.status(200).json({
         message:"user refreshed successfully",
@@ -130,7 +136,11 @@ const logoutController=async(req,res)=>{
     const user=req.user
     user.refreshToken=null
     await user.save()
-    res.clearCookie("refreshtoken")
+    res.clearCookie("refreshtoken",{
+        httpOnly: true,
+        secure: true,
+        sameSite: "none"
+    })
     return res.status(200).json({
         message:"user loggedout successfully"
     })
