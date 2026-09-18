@@ -5,6 +5,7 @@ const config={
     REFRESH_TOKEN_SECRET:process.env.REFRESH_TOKEN_SECRET,
     IMAGEKIT_PRIVATE_KEY:process.env.IMAGEKIT_PRIVATE_KEY,
     GROQ_API_KEY:process.env.GROQ_API_KEY,
-    FRONTEND_URL: process.env.FRONTEND_URL
+    FRONTEND_URL: process.env.FRONTEND_URL,
+    PORT: process.env.PORT || 3000,
 }
 module.exports=config
