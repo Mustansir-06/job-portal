@@ -8,7 +8,7 @@ const connectDB = require("./src/config/db")
 const config = require("./src/config/config")
 const conversationModel = require("./src/models/conversation.model")
 const messageModel = require("./src/models/message.model")
-const config=require("./src/config/config")
+
 const io = new Server(server, {
     cors: {
         origin:config.FRONTEND_URL
