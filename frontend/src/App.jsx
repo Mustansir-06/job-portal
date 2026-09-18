@@ -6,7 +6,7 @@ import AuthLayout from "./layouts/AuthLayout"
 import MainLayout from "./layouts/MainLayout"
 
 import PublicProtected from "./protected/PulicProtected"
-import MainProtected from "./Protected/MainProtected"
+import MainProtected from "./protected/MainProtected"
 import RoleProtected from "./protected/RoleProtected"
 import DashboardRedirect from "./protected/DashboardRedirect"
 
