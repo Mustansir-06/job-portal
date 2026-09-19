@@ -77,17 +77,9 @@ const searchJobs = async ({
 
         if (location) {
 
-            const locations =
-                location
-                    .split(",")
-                    .map((item) => item.trim())
-                    .filter(Boolean)
-
-            if (locations.length > 0) {
-
-                filter.location = {
-                    $in: locations
-                }
+            filter.location = {
+                $regex: location.trim(),
+                $options: "i"
             }
         }
 
